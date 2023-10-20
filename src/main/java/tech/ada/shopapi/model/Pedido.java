@@ -24,7 +24,7 @@ public class Pedido {
     //@ManyToMany - Muitos pra Muitos
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Item> itens;
-    @Temporal(TemporalType.TIMESTAMP) .
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime dataHora;
     private BigDecimal total;
 
