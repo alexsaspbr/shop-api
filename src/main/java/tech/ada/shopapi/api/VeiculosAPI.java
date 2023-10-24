@@ -3,6 +3,7 @@ package tech.ada.shopapi.api;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import tech.ada.shopapi.dto.AnoDTO;
 import tech.ada.shopapi.dto.MarcaDTO;
 import tech.ada.shopapi.dto.ModeloDTO;
 import tech.ada.shopapi.dto.ModeloResponseDTO;
@@ -17,6 +18,9 @@ public interface VeiculosAPI {
 
     @GetMapping("/fipe/api/v1/carros/marcas/{marca}/modelos")
     public ModeloResponseDTO listarModelos(@PathVariable("marca") Long marca);
+
+    @GetMapping("/fipe/api/v1/carros/marcas/{marca}/modelos/{modelo}/anos")
+    List<AnoDTO> listarAnoPorModelo(@PathVariable("marca") Long marca, @PathVariable("modelo") Long modelo);
 
     /*
     * Criar um endpoint para trazer as 3 primeiras Marcas,
